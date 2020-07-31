@@ -1,7 +1,13 @@
-<h1>Cocktails</h1>
+<!-- https://strictlycocktail.herokuapp.com/ -->
+
+<div class="banner">
+  <h1>strictly cocktails!</h1>
+  <p><em><h5>sip sip me! sip sip me not!</h5></em></p>
+</div>
+
 
 <% @cocktails.each do |cocktail| %>
-  <p><h3><%= link_to cocktail.name, cocktail_path(cocktail.id) %></h3> </p>
+  <p><h2><%= link_to cocktail.name, cocktail_path(cocktail.id) %></h2> </p>
 <% end %>
 
 <%= link_to 'Add cocktail', new_cocktail_path %>
