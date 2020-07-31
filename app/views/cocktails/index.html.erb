@@ -1,13 +1,22 @@
 <!-- https://strictlycocktail.herokuapp.com/ -->
 
-<div class="banner">
-  <h1>strictly cocktails!</h1>
-  <p><em><h5>sip me! sip me not!</h5></em></p>
+<div class="home-banner">
+  <h1>Strictly Cocktail</h1>
 </div>
 
-
-<% @cocktails.each do |cocktail| %>
-  <p><h2><%= link_to cocktail.name, cocktail_path(cocktail.id) %></h2> </p>
-<% end %>
+<div class="container">
+  <div class="row py-4">
+  <% @cocktails.each do |cocktail| %>
+      <div class="col-xs-12 col-sm-6 col-lg-4 py-4">
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.pexels.com/photos/616836/pexels-photo-616836.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500)">
+          <%= link_to cocktail.name, cocktail_path(cocktail.id) %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
 
 <%= link_to 'Add cocktail', new_cocktail_path %>
+
+
+

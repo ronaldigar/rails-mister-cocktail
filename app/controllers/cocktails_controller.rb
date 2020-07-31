@@ -9,7 +9,7 @@ class CocktailsController < ApplicationController
   end
 
   def create
-    @cocktail = Cocktail.new(task_params)
+    @cocktail = Cocktail.new(cocktail_params)
     if @cocktail.save
       redirect_to cocktails_path
     else
@@ -23,7 +23,7 @@ class CocktailsController < ApplicationController
 
   private
 
-  def task_params
+  def cocktail_params
     params.require(:cocktail).permit(:name)
   end
 end
